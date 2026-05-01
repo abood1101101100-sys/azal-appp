@@ -1,0 +1,23 @@
+workflows:
+  build_and_deploy_web:
+    name: Build & Deploy Web - Vite
+    max_build_duration: 60
+    environment:
+      node: 18.20.2
+      npm: 9.5.1
+      vars:
+        # إذا تريد تغير المنفذ أو base path للقيم النهائية ضعها هنا
+        PORT: 3000
+        BASE_PATH: /
+    scripts:
+      - name: Install dependencies
+        script: npm install
+      - name: Build Vite project
+        script: npm run build
+      - name: Preview production build (optional)
+        script: npm run serve &
+    artifacts:
+      - dist/public/**
+    publishing:
+      # أزل هذا القسم أو عدله إذا لم ترد النشر التلقائي
+      # web: []
