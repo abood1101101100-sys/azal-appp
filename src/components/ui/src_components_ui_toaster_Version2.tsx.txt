@@ -1,0 +1,6 @@
+import * as React from "react";
+
+// Placeholder. يمكنك لاحقاً ربط Sonner أو أي مكتبة Toast.
+export function Toaster() {
+  return null;
+}
